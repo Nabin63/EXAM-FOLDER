@@ -47,23 +47,28 @@ function submitExam(){
 <script>
 let timeLeft = 1800; // 30 minutes
 
-let timer = setInterval(function(){
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
+function startTimer(){
+  let timer = setInterval(function(){
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
 
-    document.getElementById("timer").innerHTML =
+      document.getElementById("timer").innerHTML =
         "Time Left: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
-    timeLeft--;
+      timeLeft--;
 
-    if(timeLeft < 0){
-        clearInterval(timer);
-        alert("Time Up! Exam auto submitted.");
-        submitExam();
-    }
-},1000);
+      if(timeLeft < 0){
+          clearInterval(timer);
+          alert("Time Up! Exam auto submitted.");
+          submitExam();
+      }
+  },1000);
+}
+
+window.onload = startTimer;
 </script>
 
 </body>
 </html>
+
 
