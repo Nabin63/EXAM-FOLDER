@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+<style>
+body{font-family:Arial;background:#dff;text-align:center;margin-top:100px}
+.box{background:white;padding:30px;width:300px;margin:auto;border-radius:10px}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Exam Result</h2>
+<h3 id="student"></h3>
+<h1 id="marks"></h1>
+<button onclick="logout()">Logout</button>
+</div>
+
+<script>
+document.getElementById("student").innerHTML="Student: "+localStorage.getItem("student");
+document.getElementById("marks").innerHTML="Marks: "+localStorage.getItem("score")+" / 3";
+
+function logout(){
+    localStorage.clear();
+    window.location="login.html";
+}
+</script>
+
+</body>
+</html>
