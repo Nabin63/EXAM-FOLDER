@@ -20,7 +20,25 @@ button{padding:10px 20px;background:green;color:white;border:none}
 </div>
 
 <script>
-function login()
+<script>
+function login() {
+  let id = document.getElementById("name").value;
+  let pass = document.getElementById("password").value;
+
+  if(id === ""){
+      alert("Enter Student ID");
+      return;
+  }
+
+  if(pass === "exam123"){
+      localStorage.setItem("studentName", id);
+      window.location.href = "exam.html";
+  } else {
+      alert("Wrong Password");
+  }
+}
+</script>
+
 </script>
 <script src="students.js"></script>
 <script>
@@ -41,4 +59,5 @@ function login() {
 
 </body>
 </html>
+
 
