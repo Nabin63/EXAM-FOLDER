@@ -1,0 +1,7 @@
+// STUDENT DATABASE
+const students = [
+  { id: "1001", password: "pass123", name: "Rahul" },
+  { id: "1002", password: "pass123", name: "Priya" },
+  { id: "1003", password: "pass123", name: "Amit" },
+  { id: "1004", password: "pass123", name: "Sneha" }
+];
