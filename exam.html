@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Exam Page</title>
+
 <style>
 body{font-family:Arial;background:#eef}
 .box{background:white;padding:20px;width:500px;margin:auto;border-radius:10px}
@@ -10,8 +11,9 @@ button{padding:10px;background:blue;color:white;border:none}
 </head>
 
 <body>
+
 <div class="box">
-<h3 id="timer" style="color:red;"></h3>
+<h3 id="timer" style="color:red;">Time Left: 30:00</h3>
 <h2>Simple Online Exam</h2>
 
 <form id="quiz">
@@ -26,26 +28,14 @@ button{padding:10px;background:blue;color:white;border:none}
 
 <p>3. 5 x 3 = ?</p>
 <input type="radio" name="q3" value="15">15<br>
-<input type="radio" name="q3" value="10">10<br>
+<input type="radio" name="q3" value="10">10<br><br>
 
-<br>
 <button type="button" onclick="submitExam()">Submit Exam</button>
 </form>
 </div>
 
 <script>
-function submitExam(){
-    var score=0;
-
-    if(document.querySelector('input[name="q1"]:checked')?.value=="4") score++;
-    if(document.querySelector('input[name="q2"]:checked')?.value=="Delhi") score++;
-    if(document.querySelector('input[name="q3"]:checked')?.value=="15") score++;
-
-    localStorage.setItem("score",score);
-    window.location="result.html";
-}
-<script>
-// TIMER (30 minutes)
+// TIMER 30 MIN
 let timeLeft = 1800;
 
 let timer = setInterval(function(){
@@ -65,7 +55,7 @@ let timer = setInterval(function(){
 },1000);
 
 
-// SUBMIT EXAM FUNCTION
+// RESULT CALCULATION
 function submitExam(){
     let score = 0;
 
@@ -78,12 +68,5 @@ function submitExam(){
 }
 </script>
 
-
 </body>
 </html>
-
-
-
-
-
-
