@@ -44,8 +44,9 @@ function submitExam(){
     localStorage.setItem("score",score);
     window.location="result.html";
 }
-<script><script>
-let timeLeft = 1800; // 30 minutes
+<script>
+// TIMER (30 minutes)
+let timeLeft = 1800;
 
 let timer = setInterval(function(){
     let minutes = Math.floor(timeLeft / 60);
@@ -62,10 +63,25 @@ let timer = setInterval(function(){
         submitExam();
     }
 },1000);
+
+
+// SUBMIT EXAM FUNCTION
+function submitExam(){
+    let score = 0;
+
+    if(document.querySelector('input[name="q1"]:checked')?.value == "4") score++;
+    if(document.querySelector('input[name="q2"]:checked')?.value == "Delhi") score++;
+    if(document.querySelector('input[name="q3"]:checked')?.value == "15") score++;
+
+    localStorage.setItem("score", score);
+    window.location.href = "result.html";
+}
 </script>
+
 
 </body>
 </html>
+
 
 
 
