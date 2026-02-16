@@ -11,6 +11,7 @@ button{padding:10px;background:blue;color:white;border:none}
 
 <body>
 <div class="box">
+<h3 id="timer" style="color:red;">Time Left: 10:00</h3>
 <h2>Simple Online Exam</h2>
 
 <form id="quiz">
@@ -43,7 +44,26 @@ function submitExam(){
     localStorage.setItem("score",score);
     window.location="result.html";
 }
+<script>
+let timeLeft = 1800; // 30 minutes
+
+let timer = setInterval(function(){
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    document.getElementById("timer").innerHTML =
+        "Time Left: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+    timeLeft--;
+
+    if(timeLeft < 0){
+        clearInterval(timer);
+        alert("Time Up! Exam auto submitted.");
+        submitExam();
+    }
+},1000);
 </script>
 
 </body>
 </html>
+
