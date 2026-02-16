@@ -247,4 +247,23 @@ answer:2
 },
 {
 q:"47. 3 tens = ?",
-options:["10",]()
+options:["10","20","30","40"],
+answer:2
+},
+{
+q:"48. 5 hundreds = ?",
+options:["100","200","500","1000"],
+answer:2
+},
+{
+q:"49. 1 km = ? meters",
+options:["100","500","1000","1500"],
+answer:2
+},
+{
+q:"50. Even number?",
+options:["13","17","18","21"],
+answer:2
+}
+
+];
