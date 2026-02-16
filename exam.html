@@ -2,107 +2,58 @@
 <html>
 <head>
 <title>Exam Page</title>
-
 <style>
-body{font-family:Arial;background:#eef}
-.box{background:white;padding:20px;width:500px;margin:auto;border-radius:10px}
-button{padding:10px;background:blue;color:white;border:none}
+body{font-family:Arial;background:#f0f0ff;text-align:center}
+.box{background:white;padding:20px;margin:40px auto;width:60%;border-radius:10px}
 </style>
 </head>
 
 <body>
 
-<div class="box">
-<h3 id="timer" style="color:red;">Time Left: 30:00</h3>
-<h2>Simple Online Exam</h2>
+<h2 id="timer" style="color:red">Time Left: 30:00</h2>
 
-<form id="quiz">
+<div class="box">
+<h1>Simple Online Exam</h1>
 
 <div id="quiz"></div>
 <br>
 <button onclick="submitExam()">Submit Exam</button>
-
-<script>
-let currentQ = 0;
-let answers = [];
-
-function loadQuestions() {
-    let quizDiv = document.getElementById("quiz");
-    quizDiv.innerHTML = "";
-
-    questions.forEach((q, index) => {
-        let qDiv = document.createElement("div");
-        qDiv.innerHTML = "<h3>"+q.q+"</h3>";
-
-        q.options.forEach((opt, i) => {
-            qDiv.innerHTML += `
-            <label>
-            <input type="radio" name="q${index}" value="${i}">
-            ${opt}
-            </label><br>`;
-        });
-
-        quizDiv.appendChild(qDiv);
-    });
-}
-
-function submitExam() {
-    let score = 0;
-
-    questions.forEach((q, index) => {
-        let selected = document.querySelector(`input[name="q${index}"]:checked`);
-        if(selected && selected.value == q.answer){
-            score++;
-        }
-    });
-
-    alert("Your Score = " + score + " / " + questions.length);
-}
-
-window.onload = loadQuestions;
-</script>
-
-
-<button type="button" onclick="submitExam()">Submit Exam</button>
-</form>
 </div>
 
+<script src="students.js"></script>
+
 <script>
-// TIMER 30 MIN
-let timeLeft = 1800;
-
-let timer = setInterval(function(){
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
-
-    document.getElementById("timer").innerHTML =
-      "Time Left: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-
-    timeLeft--;
-
-    if(timeLeft < 0){
-        clearInterval(timer);
-        alert("Time Up! Exam auto submitted.");
-        submitExam();
-    }
+let time = 1800;
+setInterval(()=>{
+let m=Math.floor(time/60);
+let s=time%60;
+document.getElementById("timer").innerHTML="Time Left: "+m+":"+s;
+time--;
+if(time<=0) submitExam();
 },1000);
 
-
-// RESULT CALCULATION
-function submitExam(){
-    let score = 0;
-
-    if(document.querySelector('input[name="q1"]:checked')?.value == "4") score++;
-    if(document.querySelector('input[name="q2"]:checked')?.value == "Delhi") score++;
-    if(document.querySelector('input[name="q3"]:checked')?.value == "15") score++;
-
-    localStorage.setItem("score", score);
-    window.location.href = "result.html";
+function loadQuestions(){
+let quiz=document.getElementById("quiz");
+questions.forEach((q,index)=>{
+quiz.innerHTML+=`<h3>${q.q}</h3>`;
+q.options.forEach((opt,i)=>{
+quiz.innerHTML+=`
+<input type="radio" name="q${index}" value="${i}"> ${opt}<br>`;
+});
+});
 }
+
+function submitExam(){
+let score=0;
+questions.forEach((q,index)=>{
+let ans=document.querySelector(`input[name="q${index}"]:checked`);
+if(ans && ans.value==q.answer) score++;
+});
+alert("Your Score = "+score+" / "+questions.length);
+}
+
+window.onload=loadQuestions;
 </script>
-<script src="students.js"></script>
 
 </body>
 </html>
-
-
