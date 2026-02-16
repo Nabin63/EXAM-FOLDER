@@ -20,19 +20,25 @@ button{padding:10px 20px;background:green;color:white;border:none}
 </div>
 
 <script>
-function login(){
-    var name=document.getElementById("name").value;
-    var pass=document.getElementById("pass").value;
+function login()
+</script>
+<script src="students.js"></script>
+<script>
+function login() {
+  let id = document.getElementById("name").value;
+  let pass = document.getElementById("password").value;
 
-    if(name=="" || pass==""){
-        alert("Please enter details");
-        return;
-    }
+  let found = students.find(s => s.id === id && s.password === pass);
 
-    localStorage.setItem("student",name);
-    window.location="exam.html";
+  if(found){
+      localStorage.setItem("studentName", found.name);
+      window.location.href = "exam.html";
+  } else {
+      alert("Invalid Student ID or Password");
+  }
 }
 </script>
 
 </body>
 </html>
+
