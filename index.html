@@ -30,7 +30,7 @@ function login() {
       return;
   }
 
-  if(pass === "exam123"){
+ if(pass === "nabin"){
       localStorage.setItem("studentName", id);
       window.location.href = "exam.html";
   } else {
@@ -46,13 +46,16 @@ function login() {
   let id = document.getElementById("name").value;
   let pass = document.getElementById("password").value;
 
-  let found = students.find(s => s.id === id && s.password === pass);
+  if(id === ""){
+      alert("Enter Student ID");
+      return;
+  }
 
-  if(found){
-      localStorage.setItem("studentName", found.name);
+  if(pass === "exam123"){
+      localStorage.setItem("studentName", id);
       window.location.href = "exam.html";
   } else {
-      alert("Invalid Student ID or Password");
+      alert("Wrong Password");
   }
 }
 </script>
