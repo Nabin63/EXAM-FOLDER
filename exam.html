@@ -11,7 +11,7 @@ button{padding:10px;background:blue;color:white;border:none}
 
 <body>
 <div class="box">
-<h3 id="timer" style="color:red;">Time Left: 10:00</h3>
+<h3 id="timer" style="color:red;"></h3>
 <h2>Simple Online Exam</h2>
 
 <form id="quiz">
@@ -45,6 +45,7 @@ function submitExam(){
     window.location="result.html";
 }
 <script>
+<script>
 let timeLeft = 1800; // 30 minutes
 
 function startTimer(){
@@ -70,5 +71,6 @@ window.onload = startTimer;
 
 </body>
 </html>
+
 
 
