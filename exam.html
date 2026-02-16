@@ -18,17 +18,50 @@ button{padding:10px;background:blue;color:white;border:none}
 
 <form id="quiz">
 
-<p>1. 2 + 2 = ?</p>
-<input type="radio" name="q1" value="2">2<br>
-<input type="radio" name="q1" value="4">4<br>
+<div id="quiz"></div>
+<br>
+<button onclick="submitExam()">Submit Exam</button>
 
-<p>2. Capital of India?</p>
-<input type="radio" name="q2" value="Mumbai">Mumbai<br>
-<input type="radio" name="q2" value="Delhi">Delhi<br>
+<script>
+let currentQ = 0;
+let answers = [];
 
-<p>3. 5 x 3 = ?</p>
-<input type="radio" name="q3" value="15">15<br>
-<input type="radio" name="q3" value="10">10<br><br>
+function loadQuestions() {
+    let quizDiv = document.getElementById("quiz");
+    quizDiv.innerHTML = "";
+
+    questions.forEach((q, index) => {
+        let qDiv = document.createElement("div");
+        qDiv.innerHTML = "<h3>"+q.q+"</h3>";
+
+        q.options.forEach((opt, i) => {
+            qDiv.innerHTML += `
+            <label>
+            <input type="radio" name="q${index}" value="${i}">
+            ${opt}
+            </label><br>`;
+        });
+
+        quizDiv.appendChild(qDiv);
+    });
+}
+
+function submitExam() {
+    let score = 0;
+
+    questions.forEach((q, index) => {
+        let selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if(selected && selected.value == q.answer){
+            score++;
+        }
+    });
+
+    alert("Your Score = " + score + " / " + questions.length);
+}
+
+window.onload = loadQuestions;
+</script>
+
 
 <button type="button" onclick="submitExam()">Submit Exam</button>
 </form>
@@ -71,4 +104,5 @@ function submitExam(){
 
 </body>
 </html>
+
 
