@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Login</title>
+<style>
+body{font-family:Arial;background:#f2f2f2;text-align:center;margin-top:100px}
+.box{background:white;padding:30px;width:300px;margin:auto;border-radius:10px}
+input{width:90%;padding:10px;margin:10px}
+button{padding:10px 20px;background:green;color:white;border:none}
+</style>
+</head>
+
+<body>
+<div class="box">
+<h2>Online Exam Login</h2>
+
+<input type="text" id="name" placeholder="Enter Name"><br>
+<input type="password" id="pass" placeholder="Enter Password"><br>
+<button onclick="login()">Login</button>
+</div>
+
+<script>
+function login(){
+    var name=document.getElementById("name").value;
+    var pass=document.getElementById("pass").value;
+
+    if(name=="" || pass==""){
+        alert("Please enter details");
+        return;
+    }
+
+    localStorage.setItem("student",name);
+    window.location="exam.html";
+}
+</script>
+
+</body>
+</html>
