@@ -41,6 +41,8 @@ body{font-family:Arial;background:#f0f0ff;text-align:center}
 
 <script>
 let time = 1800;
+  let studentName = localStorage.getItem("studentName") || "Unknown Student";
+
 setInterval(()=>{
 let m=Math.floor(time/60);
 let s=time%60;
@@ -62,7 +64,9 @@ quiz.innerHTML+=`
 
 function submitExam(){
 let score=0;
-let resultText="STUDENT EXAM RESULT\n\n";
+let date = new Date().toLocaleString();
+
+let resultText=`STUDENT EXAM RESULT\n\nName: ${studentName}\nDate: ${date}\n\n`;
 
 questions.forEach((q,index)=>{
 let ans=document.querySelector(`input[name="q${index}"]:checked`);
@@ -81,8 +85,9 @@ alert("Exam Submitted!");
 const { jsPDF } = window.jspdf;
 const doc = new jsPDF();
 doc.text(resultText,10,10);
-doc.save("Exam_Result.pdf");
+doc.save(studentName+"_Result.pdf");
 }
+
 
 
 window.onload=loadQuestions;
@@ -90,6 +95,7 @@ window.onload=loadQuestions;
 
 </body>
 </html>
+
 
 
 
