@@ -36,7 +36,16 @@ button{
 <div class="box">
 <h2>Online Exam Login</h2>
 
-<input type="text" id="name" placeholder="Enter Student ID"><br>
+<button onclick="startExam()">Start Exam</button>
+
+<script>
+function startExam(){
+let name = document.getElementById("name").value;
+localStorage.setItem("studentName", name);
+window.location.href = "exam.html";
+}
+</script>
+
 <input type="password" id="password" placeholder="Enter Password"><br>
 
 <button onclick="login()">Login</button>
@@ -63,3 +72,4 @@ function login() {
 
 </body>
 </html>
+
