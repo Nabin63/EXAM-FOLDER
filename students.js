@@ -1,269 +1,64 @@
 var questions = [
 
-// ---------- ADDITION ----------
-{
-q:"1. 25 + 15 = ?",
-options:["30","35","40","45"],
-answer:1
-},
-{
-q:"2. 48 + 22 = ?",
-options:["60","65","70","75"],
-answer:2
-},
-{
-q:"3. 36 + 14 = ?",
-options:["40","45","50","55"],
-answer:2
-},
-{
-q:"4. 72 + 18 = ?",
-options:["80","85","90","95"],
-answer:2
-},
-{
-q:"5. 55 + 25 = ?",
-options:["70","75","80","85"],
-answer:2
-},
+{q:"1. Choose the vowel.",options:["b","c","a","d"],answer:2},
+{q:"2. Choose the vowel.",options:["k","e","t","p"],answer:1},
+{q:"3. Choose the consonant.",options:["a","e","b","i"],answer:2},
+{q:"4. Choose the consonant.",options:["o","u","m","a"],answer:2},
+{q:"5. Which is capital letter?",options:["a","b","C","d"],answer:2},
 
-// ---------- SUBTRACTION ----------
-{
-q:"6. 90 − 35 = ?",
-options:["45","50","55","60"],
-answer:2
-},
-{
-q:"7. 80 − 27 = ?",
-options:["53","55","57","60"],
-answer:0
-},
-{
-q:"8. 70 − 18 = ?",
-options:["50","52","54","56"],
-answer:1
-},
-{
-q:"9. 65 − 25 = ?",
-options:["35","40","45","50"],
-answer:1
-},
-{
-q:"10. 100 − 48 = ?",
-options:["50","52","54","56"],
-answer:1
-},
+{q:"6. Capital of 'b' ?",options:["B","D","P","Q"],answer:0},
+{q:"7. Capital of 'm' ?",options:["N","M","H","K"],answer:1},
+{q:"8. Small of 'A' ?",options:["a","b","c","d"],answer:0},
+{q:"9. Small of 'D' ?",options:["b","c","d","e"],answer:2},
+{q:"10. Small of 'F' ?",options:["f","g","h","i"],answer:0},
 
-// ---------- MULTIPLICATION ----------
-{
-q:"11. 6 × 7 = ?",
-options:["36","40","42","48"],
-answer:2
-},
-{
-q:"12. 8 × 9 = ?",
-options:["64","72","70","74"],
-answer:1
-},
-{
-q:"13. 5 × 8 = ?",
-options:["35","40","45","50"],
-answer:1
-},
-{
-q:"14. 7 × 6 = ?",
-options:["40","42","44","48"],
-answer:1
-},
-{
-q:"15. 9 × 4 = ?",
-options:["32","36","38","40"],
-answer:1
-},
+{q:"11. Fill: A ___ apple.",options:["is","an","am","are"],answer:1},
+{q:"12. Fill: A ___ boy.",options:["an","a","am","are"],answer:1},
+{q:"13. Fill: ___ elephant.",options:["A","An","Is","Am"],answer:1},
+{q:"14. Fill: ___ cat.",options:["An","A","Is","Am"],answer:1},
+{q:"15. Fill: ___ orange.",options:["A","An","Is","Are"],answer:1},
 
-// ---------- DIVISION ----------
-{
-q:"16. 56 ÷ 7 = ?",
-options:["6","7","8","9"],
-answer:2
-},
-{
-q:"17. 72 ÷ 8 = ?",
-options:["7","8","9","10"],
-answer:2
-},
-{
-q:"18. 45 ÷ 5 = ?",
-options:["8","9","10","11"],
-answer:1
-},
-{
-q:"19. 63 ÷ 9 = ?",
-options:["6","7","8","9"],
-answer:1
-},
-{
-q:"20. 81 ÷ 9 = ?",
-options:["7","8","9","10"],
-answer:2
-},
+{q:"16. Plural of cat.",options:["cats","catss","cates","cat"],answer:0},
+{q:"17. Plural of dog.",options:["dog","dogs","doges","dogss"],answer:1},
+{q:"18. Plural of boy.",options:["boys","boyes","boies","boyss"],answer:0},
+{q:"19. Plural of girl.",options:["girls","girles","girlss","girs"],answer:0},
+{q:"20. Plural of pen.",options:["pens","penes","pen","penss"],answer:0},
 
-// ---------- FRACTIONS ----------
-{
-q:"21. 1/2 of 20 = ?",
-options:["5","8","10","12"],
-answer:2
-},
-{
-q:"22. 1/4 of 16 = ?",
-options:["2","4","6","8"],
-answer:1
-},
-{
-q:"23. 1/3 of 15 = ?",
-options:["3","4","5","6"],
-answer:2
-},
-{
-q:"24. 1/5 of 25 = ?",
-options:["3","4","5","6"],
-answer:2
-},
-{
-q:"25. 1/2 of 18 = ?",
-options:["7","8","9","10"],
-answer:2
-},
+{q:"21. Opposite of big.",options:["small","tall","fat","long"],answer:0},
+{q:"22. Opposite of hot.",options:["warm","cold","cool","heat"],answer:1},
+{q:"23. Opposite of up.",options:["top","down","in","out"],answer:1},
+{q:"24. Opposite of day.",options:["light","night","sun","dark"],answer:1},
+{q:"25. Opposite of tall.",options:["short","long","fat","thin"],answer:0},
 
-// ---------- TIME ----------
-{
-q:"26. 60 minutes = ? hour",
-options:["1","2","3","4"],
-answer:0
-},
-{
-q:"27. 1 day = ? hours",
-options:["12","18","24","36"],
-answer:2
-},
-{
-q:"28. 7 days = ? week",
-options:["1","2","3","4"],
-answer:0
-},
-{
-q:"29. 1 year = ? months",
-options:["10","11","12","13"],
-answer:2
-},
-{
-q:"30. 30 minutes = ? hour",
-options:["1/2","1","2","3"],
-answer:0
-},
+{q:"26. Choose correct word.",options:["This","Thes","Thas","Thos"],answer:0},
+{q:"27. Choose correct word.",options:["That","Thot","Thut","Thit"],answer:0},
+{q:"28. Choose correct word.",options:["These","Thase","Thise","Thosi"],answer:0},
+{q:"29. Choose correct word.",options:["Those","Thise","Thase","Thuse"],answer:0},
+{q:"30. Choose correct word.",options:["Is","Iz","Es","As"],answer:0},
 
-// ---------- WORD PROBLEMS ----------
-{
-q:"31. Ram has 10 apples and buys 5 more. How many apples now?",
-options:["12","13","14","15"],
-answer:3
-},
-{
-q:"32. A bag has 20 balls. 6 are taken out. Balls left?",
-options:["12","13","14","15"],
-answer:2
-},
-{
-q:"33. One pencil costs ₹5. Cost of 4 pencils?",
-options:["15","20","25","30"],
-answer:1
-},
-{
-q:"34. A box has 6 rows with 5 chocolates each. Total?",
-options:["25","30","35","40"],
-answer:1
-},
-{
-q:"35. 12 students in each class. 3 classes total students?",
-options:["24","30","36","40"],
-answer:2
-},
-{
-q:"36. A train moves 40 km in 1 hr. Distance in 2 hrs?",
-options:["60","70","80","90"],
-answer:2
-},
-{
-q:"37. Mother bought 3 kg rice and 2 kg wheat. Total?",
-options:["4","5","6","7"],
-answer:1
-},
-{
-q:"38. A book costs ₹50. Paid ₹100. Change?",
-options:["40","45","50","55"],
-answer:2
-},
-{
-q:"39. 5 friends share 25 candies equally. Each gets?",
-options:["3","4","5","6"],
-answer:2
-},
-{
-q:"40. A rope is 30 m long. Cut into 3 equal parts. Length each?",
-options:["5","8","10","12"],
-answer:2
-},
+// WORD SENTENCE TYPE
+{q:"31. I ___ a boy.",options:["is","am","are","be"],answer:1},
+{q:"32. She ___ my sister.",options:["is","am","are","be"],answer:0},
+{q:"33. They ___ playing.",options:["is","am","are","be"],answer:2},
+{q:"34. He ___ running.",options:["is","am","are","be"],answer:0},
+{q:"35. We ___ happy.",options:["is","am","are","be"],answer:2},
 
-// ---------- MIXED ----------
-{
-q:"41. Largest number?",
-options:["45","67","89","34"],
-answer:2
-},
-{
-q:"42. Smallest number?",
-options:["12","8","15","20"],
-answer:1
-},
-{
-q:"43. 500 + 200 = ?",
-options:["600","650","700","750"],
-answer:2
-},
-{
-q:"44. 900 − 300 = ?",
-options:["500","600","700","800"],
-answer:1
-},
-{
-q:"45. 20 × 5 = ?",
-options:["80","90","100","110"],
-answer:2
-},
-{
-q:"46. 100 ÷ 10 = ?",
-options:["5","8","10","12"],
-answer:2
-},
-{
-q:"47. 3 tens = ?",
-options:["10","20","30","40"],
-answer:2
-},
-{
-q:"48. 5 hundreds = ?",
-options:["100","200","500","1000"],
-answer:2
-},
-{
-q:"49. 1 km = ? meters",
-options:["100","500","1000","1500"],
-answer:2
-},
-{
-q:"50. Even number?",
-options:["13","17","18","21"],
-answer:2
-}
+{q:"36. Choose colour.",options:["Red","Run","Eat","Go"],answer:0},
+{q:"37. Choose fruit.",options:["Ball","Apple","Pen","Book"],answer:1},
+{q:"38. Choose animal.",options:["Dog","Chair","Table","Bag"],answer:0},
+{q:"39. Choose bird.",options:["Crow","Car","Bus","Train"],answer:0},
+{q:"40. Choose body part.",options:["Hand","Pen","Cup","Ball"],answer:0},
+
+{q:"41. Sentence ends with?",options:[".","?","!",";"],answer:0},
+{q:"42. Question ends with?",options:[".","?","!",";"],answer:1},
+{q:"43. I am ___ India.",options:["in","on","at","to"],answer:0},
+{q:"44. Book is ___ table.",options:["in","on","at","to"],answer:1},
+{q:"45. Cat is ___ box.",options:["in","on","at","to"],answer:0},
+
+{q:"46. Days start with?",options:["Capital","Small","Number","Symbol"],answer:0},
+{q:"47. Name starts with?",options:["Capital","Small","Number","Symbol"],answer:0},
+{q:"48. A sentence starts with?",options:["Capital","Small","Number","Symbol"],answer:0},
+{q:"49. Choose greeting.",options:["Hello","Run","Jump","Eat"],answer:0},
+{q:"50. Choose polite word.",options:["Please","Go","Run","Jump"],answer:0}
 
 ];
