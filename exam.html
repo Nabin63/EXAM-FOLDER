@@ -35,6 +35,7 @@ body{font-family:Arial;background:#f0f0ff;text-align:center}
 </div>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script src="students.js"></script>
 
@@ -61,17 +62,34 @@ quiz.innerHTML+=`
 
 function submitExam(){
 let score=0;
+let resultText="STUDENT EXAM RESULT\n\n";
+
 questions.forEach((q,index)=>{
 let ans=document.querySelector(`input[name="q${index}"]:checked`);
+let studentAns = ans ? q.options[ans.value] : "Not Answered";
+let correctAns = q.options[q.answer];
+
 if(ans && ans.value==q.answer) score++;
+
+resultText += `Q${index+1}: ${q.q}\nStudent: ${studentAns}\nCorrect: ${correctAns}\n\n`;
 });
-alert("Your Score = "+score+" / "+questions.length);
+
+resultText += `FINAL SCORE = ${score} / ${questions.length}`;
+
+alert("Exam Submitted!");
+
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+doc.text(resultText,10,10);
+doc.save("Exam_Result.pdf");
 }
+
 
 window.onload=loadQuestions;
 </script>
 
 </body>
 </html>
+
 
 
