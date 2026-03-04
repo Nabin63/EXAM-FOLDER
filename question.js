@@ -1,58 +1,61 @@
 const questions = [
 
-{question:"She ___ a teacher.",options:["is","are","was","were"],answer:"is"},
-{question:"They ___ playing football.",options:["is","are","was","were"],answer:"are"},
-{question:"I ___ happy yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"We ___ in school last week.",options:["is","are","was","were"],answer:"were"},
-{question:"He ___ my brother.",options:["is","are","was","were"],answer:"is"},
-{question:"The boys ___ in the park.",options:["is","are","was","were"],answer:"are"},
-{question:"She ___ absent yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"They ___ tired yesterday.",options:["is","are","was","were"],answer:"were"},
-{question:"The dog ___ barking.",options:["is","are","was","were"],answer:"is"},
-{question:"We ___ ready.",options:["is","are","was","were"],answer:"are"},
+{
+question:"1. He ___ a student.",
+a:"is",
+b:"are",
+c:"was",
+d:"were",
+correct:"a"
+},
 
-{question:"The girl ___ singing.",options:["is","are","was","were"],answer:"is"},
-{question:"They ___ in the classroom.",options:["is","are","was","were"],answer:"are"},
-{question:"He ___ late yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"We ___ friends.",options:["is","are","was","were"],answer:"are"},
-{question:"The teacher ___ in the class.",options:["is","are","was","were"],answer:"is"},
-{question:"The students ___ happy.",options:["is","are","was","were"],answer:"are"},
-{question:"I ___ busy yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"They ___ in the market yesterday.",options:["is","are","was","were"],answer:"were"},
-{question:"The cat ___ on the table.",options:["is","are","was","were"],answer:"is"},
-{question:"The children ___ playing outside.",options:["is","are","was","were"],answer:"are"},
+{
+question:"2. They ___ playing cricket.",
+a:"is",
+b:"are",
+c:"was",
+d:"were",
+correct:"b"
+},
 
-{question:"She ___ my sister.",options:["is","are","was","were"],answer:"is"},
-{question:"The boys ___ tired yesterday.",options:["is","are","was","were"],answer:"were"},
-{question:"We ___ students.",options:["is","are","was","were"],answer:"are"},
-{question:"He ___ a doctor.",options:["is","are","was","were"],answer:"is"},
-{question:"They ___ absent yesterday.",options:["is","are","was","were"],answer:"were"},
-{question:"The bird ___ flying.",options:["is","are","was","were"],answer:"is"},
-{question:"The flowers ___ beautiful.",options:["is","are","was","were"],answer:"are"},
-{question:"I ___ at home yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"The dogs ___ barking.",options:["is","are","was","were"],answer:"are"},
-{question:"We ___ late yesterday.",options:["is","are","was","were"],answer:"were"},
+{
+question:"3. She ___ very happy yesterday.",
+a:"is",
+b:"are",
+c:"was",
+d:"were",
+correct:"c"
+},
 
-{question:"The baby ___ sleeping.",options:["is","are","was","were"],answer:"is"},
-{question:"The girls ___ dancing.",options:["is","are","was","were"],answer:"are"},
-{question:"He ___ my friend.",options:["is","are","was","were"],answer:"is"},
-{question:"They ___ happy yesterday.",options:["is","are","was","were"],answer:"were"},
-{question:"We ___ in the meeting.",options:["is","are","was","were"],answer:"are"},
-{question:"The teacher ___ absent yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"The players ___ ready.",options:["is","are","was","were"],answer:"are"},
-{question:"She ___ tired yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"The boy ___ playing.",options:["is","are","was","were"],answer:"is"},
-{question:"They ___ in school yesterday.",options:["is","are","was","were"],answer:"were"},
-
-{question:"My father ___ a teacher.",options:["is","are","was","were"],answer:"is"},
-{question:"The students ___ in the library.",options:["is","are","was","were"],answer:"are"},
-{question:"I ___ very tired yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"The cows ___ in the field.",options:["is","are","was","were"],answer:"are"},
-{question:"She ___ my best friend.",options:["is","are","was","were"],answer:"is"},
-{question:"They ___ hungry yesterday.",options:["is","are","was","were"],answer:"were"},
-{question:"The bus ___ late.",options:["is","are","was","were"],answer:"is"},
-{question:"The children ___ excited.",options:["is","are","was","were"],answer:"are"},
-{question:"He ___ sick yesterday.",options:["is","are","was","were"],answer:"was"},
-{question:"We ___ in the playground yesterday.",options:["is","are","was","were"],answer:"were"}
+{
+question:"4. We ___ in the park yesterday.",
+a:"is",
+b:"are",
+c:"was",
+d:"were",
+correct:"d"
+}
 
 ];
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((q,i)=>{
+
+const div = document.createElement("div");
+
+div.innerHTML = `
+<p><b>${q.question}</b></p>
+
+<label><input type="radio" name="q${i}" value="a"> ${q.a}</label><br>
+
+<label><input type="radio" name="q${i}" value="b"> ${q.b}</label><br>
+
+<label><input type="radio" name="q${i}" value="c"> ${q.c}</label><br>
+
+<label><input type="radio" name="q${i}" value="d"> ${q.d}</label><br><br>
+`;
+
+quiz.appendChild(div);
+
+});
