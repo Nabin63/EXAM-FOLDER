@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Simple Online Exam</title>
+<title>SLN Online Exam</title>
 
 <style>
 
 body{
-font-family: Arial;
+font-family:Arial;
 background:#f2f2f2;
 text-align:center;
 }
@@ -17,16 +17,12 @@ margin:auto;
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0px 0px 10px gray;
-}
-
-h2{
-color:#333;
+box-shadow:0 0 10px gray;
 }
 
 .question{
 text-align:left;
-margin-top:20px;
+margin-top:15px;
 }
 
 button{
@@ -52,7 +48,12 @@ font-weight:bold;
 
 <div class="container">
 
-<h2>Simple Online Exam</h2>
+<h2>S.L.N Online Examination</h2>
+
+<p>
+Student Name:
+<input type="text" id="studentName">
+</p>
 
 <p id="timer">Time Left: 30:00</p>
 
@@ -92,6 +93,30 @@ submitExam();
 },1000);
 
 
+// SHOW QUESTIONS
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((q,i)=>{
+
+quiz.innerHTML +=
+`<div class="question">
+
+<p><b>${q.question}</b></p>
+
+<label><input type="radio" name="q${i}" value="a"> ${q.a}</label><br>
+
+<label><input type="radio" name="q${i}" value="b"> ${q.b}</label><br>
+
+<label><input type="radio" name="q${i}" value="c"> ${q.c}</label><br>
+
+<label><input type="radio" name="q${i}" value="d"> ${q.d}</label>
+
+</div><br>`;
+
+});
+
+
 // RESULT
 
 function submitExam(){
@@ -108,8 +133,10 @@ score++;
 
 });
 
+let name = document.getElementById("studentName").value;
+
 document.getElementById("result").innerHTML =
-"Your Score: "+score+" / "+questions.length;
+"Student: "+name+" | Score: "+score+" / "+questions.length;
 
 }
 
