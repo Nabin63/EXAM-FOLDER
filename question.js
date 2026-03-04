@@ -1,6 +1,3 @@
-```javascript
-const questions = [
-
 questions = [
 {"q": "She ___ a good student.", "options": ["is", "are", "was", "were"], "answer": "is"},
 {"q": "They ___ playing in the field.", "options": ["is", "are", "was", "were"], "answer": "are"},
@@ -62,4 +59,3 @@ questions = [
 {"q": "The children ___ playing outside.", "options": ["is", "are", "was", "were"], "answer": "are"},
 {"q": "We ___ in the meeting yesterday.", "options": ["is", "are", "was", "were"], "answer": "were"}
 ]
-```
