@@ -7,7 +7,17 @@ body{font-family:Arial;background:#dff;text-align:center;margin-top:100px}
 .box{background:white;padding:30px;width:300px;margin:auto;border-radius:10px}
 </style>
 </head>
+<h2 id="result"></h2>
 
+<script>
+
+let score = localStorage.getItem("score");
+let total = localStorage.getItem("total");
+
+document.getElementById("result").innerHTML =
+"Your Score : "+score+" / "+total;
+
+</script>
 <body>
 
 <div class="box">
@@ -50,4 +60,5 @@ function logout(){
 
 </body>
 </html>
+
 
