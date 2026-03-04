@@ -134,7 +134,58 @@ window.location.href="result.html";
 }
 
 </script>
+<script>
 
+const questions = [
+{
+question: "1. She ___ a teacher.",
+options: ["is", "are", "was", "were"],
+answer: "is"
+},
+
+{
+question: "2. They ___ playing football.",
+options: ["is", "are", "was", "were"],
+answer: "are"
+},
+
+{
+question: "3. I ___ happy yesterday.",
+options: ["is", "are", "was", "were"],
+answer: "was"
+},
+
+{
+question: "4. We ___ in school last week.",
+options: ["is", "are", "was", "were"],
+answer: "were"
+}
+
+];
+
+let output = "";
+
+questions.forEach((q, index) => {
+
+output += `<div>
+<p>${q.question}</p>
+
+<label><input type="radio" name="q${index}" value="${q.options[0]}"> ${q.options[0]}</label><br>
+
+<label><input type="radio" name="q${index}" value="${q.options[1]}"> ${q.options[1]}</label><br>
+
+<label><input type="radio" name="q${index}" value="${q.options[2]}"> ${q.options[2]}</label><br>
+
+<label><input type="radio" name="q${index}" value="${q.options[3]}"> ${q.options[3]}</label>
+
+</div><br>`;
+
+});
+
+document.getElementById("questions").innerHTML = output;
+
+</script>
 </body>
 </html>
 ```
+
