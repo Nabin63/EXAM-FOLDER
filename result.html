@@ -16,7 +16,28 @@ body{font-family:Arial;background:#dff;text-align:center;margin-top:100px}
 <h1 id="marks"></h1>
 <button onclick="logout()">Logout</button>
 </div>
+function submitExam(){
 
+let score = 0;
+
+questions.forEach((q,index)=>{
+
+let selected = document.querySelector('input[name="q'+index+'"]:checked');
+
+if(selected){
+if(selected.value == q.answer){
+score++;
+}
+}
+
+});
+
+localStorage.setItem("score",score);
+localStorage.setItem("total",questions.length);
+
+window.location.href="result.html";
+
+}
 <script>
 document.getElementById("student").innerHTML="Student: "+localStorage.getItem("student");
 document.getElementById("marks").innerHTML="Marks: "+localStorage.getItem("score")+" / 3";
@@ -29,3 +50,4 @@ function logout(){
 
 </body>
 </html>
+
