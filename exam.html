@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SLN Online Exam</title>
+<title>SLN Online Examination</title>
 
 <style>
-
 body{
-font-family:Arial;
+font-family: Arial;
 background:#f2f2f2;
-text-align:center;
 }
 
 .container{
-width:70%;
+width:700px;
 margin:auto;
-background:light green;
-padding:20px;
+margin-top:50px;
+background:white;
+padding:30px;
 border-radius:10px;
 box-shadow:0 0 10px gray;
-}
-
-.question{
-text-align:left;
-margin-top:15px;
 }
 
 button{
@@ -32,14 +26,16 @@ padding:10px 20px;
 border:none;
 border-radius:5px;
 font-size:16px;
-cursor:pointer;
 }
 
-#timer{
+.timer{
 color:red;
 font-weight:bold;
 }
 
+.question{
+margin-top:20px;
+}
 </style>
 
 </head>
@@ -50,12 +46,10 @@ font-weight:bold;
 
 <h2>S.L.N Online Examination</h2>
 
-<p>
 Student Name:
-<input type="text" id="studentName">
-</p>
+<input type="text" id="name">
 
-<p id="timer">Time Left: 30:00</p>
+<p class="timer">Time Left: <span id="time">30:00</span></p>
 
 <div id="quiz"></div>
 
@@ -63,85 +57,91 @@ Student Name:
 
 <button onclick="submitExam()">Submit Exam</button>
 
-<h3 id="result"></h3>
-
 </div>
 
-<script src="question.js"></script>
 
 <script>
 
-// TIMER
+let questions = [
 
-let time = 1800;
+{
+question:"1. I ___ ready now.",
+a:"is",
+b:"am",
+c:"are",
+d:"were",
+correct:"b"
+},
 
-let timer = setInterval(function(){
+{
+question:"2. She ___ going to school.",
+a:"is",
+b:"am",
+c:"are",
+d:"were",
+correct:"a"
+},
 
-let minutes = Math.floor(time/60);
-let seconds = time%60;
+{
+question:"3. They ___ playing cricket.",
+a:"is",
+b:"am",
+c:"are",
+d:"was",
+correct:"c"
+},
 
-document.getElementById("timer").innerHTML =
-"Time Left: "+minutes+":"+(seconds<10?"0":"")+seconds;
-
-time--;
-
-if(time < 0){
-clearInterval(timer);
-submitExam();
+{
+question:"4. We ___ happy today.",
+a:"is",
+b:"am",
+c:"are",
+d:"was",
+correct:"c"
 }
 
-},1000);
+];
 
 
-// SHOW QUESTIONS
+let quiz=document.getElementById("quiz");
 
-const quiz = document.getElementById("quiz");
-
-questions.forEach((q,i)=>{
+questions.forEach((q,index)=>{
 
 quiz.innerHTML +=
-`<div class="question">
+`
+<div class="question">
+<p>${q.question}</p>
 
-<p><b>${q.question}</b></p>
+<label><input type="radio" name="q${index}" value="a"> ${q.a}</label><br>
+<label><input type="radio" name="q${index}" value="b"> ${q.b}</label><br>
+<label><input type="radio" name="q${index}" value="c"> ${q.c}</label><br>
+<label><input type="radio" name="q${index}" value="d"> ${q.d}</label><br>
 
-<label><input type="radio" name="q${i}" value="a"> ${q.a}</label><br>
-
-<label><input type="radio" name="q${i}" value="b"> ${q.b}</label><br>
-
-<label><input type="radio" name="q${i}" value="c"> ${q.c}</label><br>
-
-<label><input type="radio" name="q${i}" value="d"> ${q.d}</label>
-
-</div><br>`;
+</div>
+`;
 
 });
 
 
-// RESULT
-
 function submitExam(){
 
-let score = 0;
+let score=0;
 
-let score = 0;
+questions.forEach((q,index)=>{
 
-questions.forEach((q,i)=>{
+let ans=document.querySelector(`input[name="q${index}"]:checked`);
 
-let answer = document.querySelector('input[name="q'+i+'"]:checked');
-
-if(answer && answer.value === q.correct){
+if(ans && ans.value==q.correct){
 score++;
 }
 
 });
 
-let name = document.getElementById("studentName").value;
+alert("Your Marks: "+score+" / "+questions.length);
 
-document.getElementById("result").innerHTML =
-"Student: " + name + "<br>Score: " + score + " / " + questions.length;
+}
 
 </script>
 
 </body>
 </html>
-
